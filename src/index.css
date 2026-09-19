@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-primary: #1e3a8a;
+    --brand-primary-hover: #1d4ed8;
+    --brand-secondary: #0ea5e9;
+    --brand-accent: #3b82f6;
+    --brand-bg: #f8fafc;
+    --brand-surface: #ffffff;
+    --brand-text: #0f172a;
+    --brand-text-muted: #64748b;
+    --brand-border: #e2e8f0;
+    --bg-main: #0b0f19;
+    --card-bg: #151c2c;
+    --accent: #2563eb;
+    --accent-color: #2563eb;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #1e293b;
+    --border-color: #1e293b;
+    --invoice-bg: #ffffff;
+    --invoice-text: #0f172a;
+    --app-font: 'Inter', 'Hind Siliguri', sans-serif;
+  }
+
+  body.theme-dark { --bg-main: #0b0f19; --card-bg: #151c2c; --accent: #2563eb; --accent-color: #2563eb; --text-main: #f8fafc; --text-muted: #94a3b8; --border: #1e293b; --border-color: #1e293b; --invoice-bg: #1e293b; --invoice-text: #ffffff; }
+  body.theme-light { --bg-main: #f8fafc; --card-bg: #ffffff; --accent: #2563eb; --accent-color: #2563eb; --text-main: #0f172a; --text-muted: #64748b; --border: #e2e8f0; --border-color: #e2e8f0; --invoice-bg: #ffffff; --invoice-text: #000000; }
+  body.theme-corporate { --bg-main: #0f172a; --card-bg: #1e293b; --accent: #0284c7; --accent-color: #0284c7; --text-main: #f0f9ff; --text-muted: #94a3b8; --border: #1e293b; --border-color: #1e293b; --invoice-bg: #ffffff; --invoice-text: #0f172a; }
+  body.theme-emerald { --bg-main: #022c22; --card-bg: #064e3b; --accent: #10b981; --accent-color: #10b981; --text-main: #ecfdf5; --text-muted: #a7f3d0; --border: #047857; --border-color: #047857; --invoice-bg: #ffffff; --invoice-text: #064e3b; }
+  body.theme-gold { --bg-main: #1c1917; --card-bg: #292524; --accent: #d97706; --accent-color: #d97706; --text-main: #fef3c7; --text-muted: #d6d3d1; --border: #44403c; --border-color: #44403c; --invoice-bg: #fffbeb; --invoice-text: #451a03; }
+  body.theme-cyberpunk { --bg-main: #180828; --card-bg: #2d0b5a; --accent: #f43f5e; --accent-color: #f43f5e; --text-main: #fce7f3; --text-muted: #f472b6; --border: #4c1d95; --border-color: #4c1d95; --invoice-bg: #2d0b5a; --invoice-text: #ffffff; }
+  body.theme-purple { --bg-main: #1e1b4b; --card-bg: #312e81; --accent: #8b5cf6; --accent-color: #8b5cf6; --text-main: #f5f3ff; --text-muted: #c4b5fd; --border: #4338ca; --border-color: #4338ca; --invoice-bg: #ffffff; --invoice-text: #1e1b4b; }
+  body.theme-midnight { --bg-main: #000000; --card-bg: #111111; --accent: #f43f5e; --accent-color: #f43f5e; --text-main: #ffffff; --text-muted: #a1a1aa; --border: #222222; --border-color: #222222; --invoice-bg: #111111; --invoice-text: #ffffff; }
+}
+
+/* Print Specific Rules */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 8mm 8mm 8mm;
+  }
+  
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  nav,
+  header:not(.invoice-print-header),
+  aside,
+  button,
+  .print-hidden {
+    display: none !important;
+  }
+
+  #print-area {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Force background colors and borders in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* Custom glassmorphism and animations */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}

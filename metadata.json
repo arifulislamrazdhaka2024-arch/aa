@@ -1,0 +1,6 @@
+{
+  "name": "Intelligent Technician",
+  "description": "Enterprise Master Invoice, Staff Management & Dynamic Configuration Portal for Intelligent Technician",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
